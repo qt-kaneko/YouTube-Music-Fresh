@@ -9,7 +9,6 @@
 // @copyright    2023, Kaneko Qt
 // @license      GPL-3.0-or-later; https://www.gnu.org/licenses/gpl-3.0.txt
 //
-// @match        *://music.youtube.com*
 // @match        *://music.youtube.com/*
 //
 // @run-at       document-end
