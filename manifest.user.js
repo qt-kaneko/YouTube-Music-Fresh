@@ -60,8 +60,8 @@ class YouTubeMusicFresh
   /** @type {HTMLVideoElement} */
   static #player;
 
-  static {this.#ctor()}
-  static async #ctor()
+  static {this.#init()}
+  static async #init()
   {
     console.debug(this.#debugPrefix, `Starting...`);
 
