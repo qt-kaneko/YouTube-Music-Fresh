@@ -5,11 +5,12 @@
 // @icon         https://raw.github.com/qt-kaneko/youtube-music-fresh/main/icon.png
 // @author       Kaneko Qt
 // @homepageURL  https://github.com/qt-kaneko/youtube-music-fresh
-// @version      1.0.2
+// @version      1.0.4
 // @copyright    2023, Kaneko Qt
 // @license      GPL-3.0-or-later; https://www.gnu.org/licenses/gpl-3.0.txt
 //
 // @match        *://music.youtube.com*
+// @match        *://music.youtube.com/*
 //
 // @run-at       document-end
 //
@@ -17,6 +18,7 @@
 // ==/UserScript==
 
 // @ts-check
+"use strict";
 
 /** Waits for {condition}, checking it after call and every {target} change.
  * @param {() => boolean} condition
