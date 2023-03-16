@@ -36,7 +36,20 @@ function notnull(value)
  */
 function cast(type, value)
 {
-  let valueCtor = Object.getPrototypeOf(notnull(value)).constructor;
+  notnull(value);
+
   let typeCtor = type;
-  return valueCtor === typeCtor ? value : (() => {throw new TypeError(`Unable to cast object of type '${valueCtor.name}' to type '${typeCtor.name}'`)})();
+  let valueProto = (() => {switch (typeof value) {
+    case "bigint": return BigInt.prototype;
+    case "boolean": return Boolean.prototype;
+    case "function": return Function.prototype;
+    case "number": return Number.prototype;
+    case "object": return Object.getPrototypeOf(value);
+    case "string": return String.prototype;
+    case "symbol": return Symbol.prototype;
+  }})();
+
+  return valueProto.constructor === typeCtor || valueProto instanceof typeCtor
+         ? value
+         : (() => {throw new TypeError(`Unable to cast object of type '${valueProto.constructor.name}' to type '${typeCtor.name}'`)})();
 }
