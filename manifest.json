@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  
+  "name": "YouTube Music Fresh",
+  "version": "1.0.6",
+  "description": "Auto skips listened tracks on YouTube Music.",
+  "icons": {
+    "128": "./images/icon.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://music.youtube.com/*"],
+      "js": [
+        "./scripts/helpers/awaiting.js",
+        "./scripts/helpers/typization.jsjs",
+        "./scripts/YouTubeMusicFresh.js"
+        ],
+      "run_at": "document_start"
+    }
+  ]
+}
