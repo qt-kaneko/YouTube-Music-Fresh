@@ -13,10 +13,10 @@
       "matches": ["*://music.youtube.com/*"],
       "js": [
         "./scripts/helpers/awaiting.js",
-        "./scripts/helpers/typization.jsjs",
+        "./scripts/helpers/typization.js",
         "./scripts/YouTubeMusicFresh.js"
-        ],
-      "run_at": "document_start"
+      ],
+      "run_at": "document_end"
     }
   ]
 }
